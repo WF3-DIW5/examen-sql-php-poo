@@ -1,3 +1,448 @@
+[2019-02-11 15:54:50]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:54:50]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:54:50]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-11 15:54:50]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:54:50]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:54:50]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:54:50] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:54:50] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:54:50] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:54:24]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:54:24]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:54:24]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-11 15:54:24]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:54:24]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:54:24]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:54:24] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:54:24] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:54:24] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:53:45]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:53:45]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:53:45]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-11 15:53:45]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:53:45]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:53:45]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:53:45] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:53:45] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:53:45] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:53:28]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:53:28]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:53:28]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-11 15:53:28]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:53:28]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:53:28]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:53:28] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:53:28] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:53:28] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:52:21]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:52:21]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-11 15:52:21]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-11 15:52:21]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:52:21]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:52:21]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:52:21] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:52:21] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:52:21] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:47:10]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-11 15:47:10]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:47:10]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:47:10] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:47:10] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:47:10] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:42:41]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:42:41]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:42:41] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:42:41] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:42:41] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:42:27]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:42:27]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:42:27] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:42:27] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:42:27] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:42:14]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:42:14]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:42:14] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:42:14] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:42:14] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:42:12]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:42:12]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:42:12] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:42:12] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:42:12] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:42:01]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur . id_conducteur = conducteur . id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:42:01]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:42:01] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:42:01] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:42:01] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:41:59]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur . id_conducteur = conducteur . id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:41:59]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:41:59] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:41:59] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:41:59] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:41:53]     SELECT conducteur . id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur . id_conducteur = conducteur . id_conducteur
+                    WHERE id_vehicule IS null
+[2019-02-11 15:41:53]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:41:53] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:41:53] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:41:53] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:38:15]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:38:15] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:38:15] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:38:15] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:37:42]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:37:42] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:37:42] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:37:42] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:37:11]  SELECT id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:37:11] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:37:11] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:37:11] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:36:53]  SELECT id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-11 15:36:53] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:36:53] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:36:53] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:33:38] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:33:38] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:33:38] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:33:24] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:33:24] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:33:24] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-11 15:33:14] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-11 15:33:14] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-11 15:33:14] SELECT COUNT(*) as nb FROM conducteur
 [2019-02-11 15:25:04] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
 [2019-02-11 15:25:04] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
 [2019-02-11 15:25:04] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
