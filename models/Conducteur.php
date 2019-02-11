@@ -26,12 +26,16 @@ class Conducteur extends Db {
         return $this;
     }
 
-    public function setPrenom($prenom) { 
+    public function setPrenom($prenom) {
+        if (strlen($prenom) === 0) throw new Exception('Le champ prenom ne peut pas être vide.');
+
         $this->prenom = $prenom;
         return $this;
     }
 
-    public function setNom($nom) { 
+    public function setNom($nom) {
+        if (strlen($nom) === 0) throw new Exception('Le champ nom ne peut pas être vide.');
+
         $this->nom = $nom;
         return $this;
     }

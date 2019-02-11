@@ -33,21 +33,29 @@ class Vehicule extends Db {
     }
 
     public function setMarque($marque) {
+        if (strlen($marque) === 0) throw new Exception('Le champ marque ne peut pas être vide.');
+
         $this->marque = $marque;
         return $this;
     }
 
     public function setModele($modele) {
+        if (strlen($modele) === 0) throw new Exception('Le champ modele ne peut pas être vide.');
+
         $this->modele = $modele;
         return $this;
     }
 
     public function setCouleur($couleur) {
+        if (strlen($couleur) === 0) throw new Exception('Le champ couleur ne peut pas être vide.');
+
         $this->couleur = $couleur;
         return $this;
     }
 
     public function setImmatriculation($immatriculation) {
+        if (strlen($immatriculation) === 0) throw new Exception('Le champ immatriculation ne peut pas être vide.');
+
         $this->immatriculation = $immatriculation;
         return $this;
     }

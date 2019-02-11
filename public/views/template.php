@@ -114,6 +114,44 @@
             var answer = confirm('Confirmez-vous la suppression ?');
             if(!answer) { e.preventDefault(); }
         });
+
+
+        $('.edit-conducteur').on('click', function() {
+
+            $('#conducteurId').val($(this).data('id'));
+            $('#conducteurPrenom').val($(this).data('prenom'));
+            $('#conducteurNom').val($(this).data('nom'));
+
+            $('#conducteurSubmit')  .removeClass('btn-primary')
+                                    .addClass('btn-warning')
+                                    .html('Modifier ce conducteur');            
+        });
+
+        $('.edit-vehicule').on('click', function() {
+
+            $('#vehiculeId').val($(this).data('id'));
+            $('#vehiculeMarque').val($(this).data('marque'));
+            $('#vehiculeModele').val($(this).data('modele'));
+            $('#vehiculeCouleur').val($(this).data('couleur'));
+            $('#vehiculeImmatriculation').val($(this).data('immatriculation'));
+
+            $('#vehiculeSubmit')  .removeClass('btn-primary')
+                                    .addClass('btn-warning')
+                                    .html('Modifier ce véhicule');            
+        });
+
+        $('.edit-association').on('click', function() {
+
+            $('#associationId').val($(this).data('id'));
+
+            $('#associationIdConducteur').val($(this).data('idconducteur'));
+            $('#associationIdVehicule').val($(this).data('idvehicule'));
+
+            $('#associationSubmit')  .removeClass('btn-primary')
+                                    .addClass('btn-warning')
+                                    .html('Modifier cette association');            
+        });
+
     </script>
 </body>
 

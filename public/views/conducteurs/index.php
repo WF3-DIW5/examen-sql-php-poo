@@ -15,26 +15,38 @@
                 <td><?= $conducteur->idConducteur() ?></td>
                 <td><?= $conducteur->prenom() ?></td>
                 <td><?= $conducteur->nom() ?></td>
-                <td><a href="<?= url('conducteurs/' . $conducteur->idConducteur() . '/show') ?>"><i class="fas fa-pen"></i></a></td>
-                <td><a href="<?= url('conducteurs/' . $conducteur->idConducteur() . '/delete') ?>"><i class="fas fa-trash"></i></a></td>
+                <td>
+                    <a  class="edit-conducteur" 
+                        data-id="<?= $conducteur->idConducteur() ?>"
+                        data-prenom="<?= $conducteur->prenom() ?>"
+                        data-nom="<?= $conducteur->nom() ?>"
+                        href="#"
+                    >
+                            <i class="fas fa-pen"></i>
+                    </a>
+                </td>
+                <td><a class="delete" href="<?= url('conducteurs/' . $conducteur->idConducteur() . '/delete') ?>"><i class="fas fa-trash"></i></a></td>
             </tr>
         <?php endforeach; ?>
     </table>
 
 
-<form action="<?= url('conducteurs/save') ?>" method="post">
+<form saction="<?= url('conducteurs/save') ?>" method="post">
 
-    <label for="idPrenom">Prénom</label>
-    <input type="text" id="idPrenom" class="form-control" name="prenom">
+    <input id="conducteurId" type="hidden" name="id_conducteur">
 
-    <label for="idNom">Nom</label>
-    <input type="text" id="idNom" class="form-control" name="nom">
+    <label for="conducteurPrenom">Prénom</label>
+    <input type="text" id="conducteurPrenom" class="form-control" name="prenom" required>
+
+    <label for="conducteurNom">Nom</label>
+    <input type="text" id="conducteurNom" class="form-control" name="nom" required>
 
 
     <hr>
 
-    <button type="submit" class="btn btn-primary">Ajouter ce conducteur</button>
+    <button id="conducteurSubmit" type="submit" class="btn btn-primary">Ajouter ce conducteur</button>
 </form>
+
 
 <?php $content = ob_get_clean(); ?>
 
