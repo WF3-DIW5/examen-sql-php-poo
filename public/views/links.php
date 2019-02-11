@@ -1,6 +1,5 @@
-<ul class="list-unstyled">
-    <li><a href="<?= url('/'); ?>" class="text-white">Accueil</a></li>
-    <li><a href="<?= url('conducteurs'); ?>" class="text-white">Conducteurs</a></li>
-    <li><a href="<?= url('associations'); ?>" class="text-white">Associations</a></li>
-    <li><a href="<?= url('vehicule'); ?>" class="text-white">Véhicules</a></li>
-</ul>
+<a href="<?= url(''); ?>" class="text-white">Accueil</a>
+<a href="<?= url('conducteurs'); ?>" class="text-white">Conducteurs</a>
+<a href="<?= url('associations'); ?>" class="text-white">Associations</a>
+<a href="<?= url('vehicule'); ?>" class="text-white">Véhicules</a>
+<a href="<?= url('divers'); ?>" class="text-white">Divers</a>

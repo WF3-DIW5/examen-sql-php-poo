@@ -2,18 +2,26 @@
 
 class VehiculesController {
     public function index() {
+
+        $vehicules = Vehicule::findAll();
+        var_dump($vehicules);
+
     }
 
     public function add() {
     }
 
-    public function show($d) {
+    public function show($id) {
+
+        $vehicule = Vehicule::findOne($id);
+        var_dump($vehicule);
+
     }
 
-    public function edit($d) {
+    public function edit($id) {
     }
 
-    public function delete($d) {
+    public function delete($id) {
     }
 
     public function save() {

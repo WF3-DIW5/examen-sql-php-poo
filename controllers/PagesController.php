@@ -7,4 +7,8 @@ class PagesController {
         view('pages.home');
 
     }
+
+    public function divers() {
+        echo "various requests";
+    }
 }
