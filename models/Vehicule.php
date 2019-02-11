@@ -108,12 +108,12 @@ class Vehicule extends Db {
             'marque' => $this->marque(),
             'modele' => $this->modele(),
             'couleur' => $this->couleur(),
-            'immatricultion' => $this->immatricultion(),
+            'immatriculation' => $this->immatriculation(),
         ];
 
         if($this->idVehicule() > 0) return $this->update($data);
 
-        $this->setIdVehicule()( Db::dbCreate(self::TABLE_NAME, $data) );
+        $this->setIdVehicule( Db::dbCreate(self::TABLE_NAME, $data) );
 
         return $this;
     }
@@ -126,14 +126,14 @@ class Vehicule extends Db {
         return $this;
     }
 
-    protected function delete() {
+    public function delete() {
         
         Db::dbDelete(self::TABLE_NAME, [
-            ['id_vehicule', '=', $this->idVehicule()]
+            'id_vehicule' => $this->idVehicule()
         ]);
 
         Db::dbDelete(Association::TABLE_NAME, [
-            ['id_vehicule', '=', $this->idVehicule()]
+            'id_vehicule' => $this->idVehicule()
         ]);
 
         return;

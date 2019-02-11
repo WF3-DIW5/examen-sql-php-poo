@@ -100,14 +100,14 @@ class Conducteur extends Db {
         return $this;
     }
 
-    protected function delete() {
+    public function delete() {
         
-        Db::dbDelete(self::TABLE_NAME, [
-            ['id_conducteur', '=', $this->idConducteur()]
+        Db::dbDelete(self::TABLE_NAME,[
+            'id_conducteur' => $this->idConducteur()
         ]);
 
         Db::dbDelete(Association::TABLE_NAME, [
-            ['id_conducteur', '=', $this->idConducteur()]
+            'id_conducteur' => $this->idConducteur()
         ]);
 
         return;

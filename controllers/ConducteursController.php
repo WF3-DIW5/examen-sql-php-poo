@@ -7,19 +7,20 @@ class ConducteursController {
         view('conducteurs.index', compact('conducteurs'));
     }
 
-    public function add() {
-    }
-
-    public function show($id) {
+    public function delete($id) {
 
         $conducteur = Conducteur::findOne($id);
-        view('conducteurs.index', compact('conducteur'));
-    }
+        $conducteur->delete();
 
+        Header('Location: ' . url('conducteurs'));
 
-    public function delete($id) {
     }
 
     public function save() {
+
+        $conducteur = new Conducteur($_POST['prenom'], $_POST['nom'], intval($_POST['id_conducteur']));
+        $conducteur->save();
+        
+        Header('Location: ' . url('conducteurs'));
     }
 }

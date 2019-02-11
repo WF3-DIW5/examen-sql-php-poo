@@ -31,7 +31,7 @@
     </table>
 
 
-<form saction="<?= url('conducteurs/save') ?>" method="post">
+<form action="<?= url('conducteurs/save') ?>" method="post">
 
     <input id="conducteurId" type="hidden" name="id_conducteur">
 

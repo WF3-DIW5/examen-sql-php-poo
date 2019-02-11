@@ -97,14 +97,14 @@ class Association extends Db {
         return $this;
     }
 
-    protected function delete() {
+    public function delete() {
         
         Db::dbDelete(self::TABLE_NAME, [
-            ['id_association', '=', $this->idAssociation()]
+            'id_association' => $this->idAssociation()
         ]);
 
         Db::dbDelete(Association::TABLE_NAME, [
-            ['id_association', '=', $this->idAssociation()]
+            'id_association' => $this->idAssociation()
         ]);
 
         return;
