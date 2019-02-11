@@ -8,6 +8,8 @@ class Vehicule extends Db {
     protected $couleur;
     protected $immatriculation;
 
+    const TABLE_NAME = 'vehicule';
+
     public function __construct(string $marque, string $modele, string $couleur, string $immatriculation, int $id_vehicule = null) {
 
         $this->setIdVehicule($id_vehicule);
@@ -48,6 +50,85 @@ class Vehicule extends Db {
     public function setImmatriculation($immatriculation) {
         $this->immatriculation = $immatriculation;
         return $this;
+    }
+
+    /**
+     * CRUD
+     */
+
+    public static function findAll() {
+
+        $datas = Db::dbFind(self::TABLE_NAME);
+
+        $vehicules = [];
+
+        foreach($datas as $data) {
+            $vehicules[] = new Vehicule(
+                $data['marque'],
+                $data['modele'],
+                $data['couleur'],
+                $data['immatriculation'],
+                intval($data['id_vehicule'])
+            );
+        }
+
+        return $vehicules;
+    }
+
+    public static function findOne(int $id) {
+        $data = Db::dbFind(self::TABLE_NAME, [
+            ['id_vehicule', '=', $id]
+        ]);
+
+        if (count($data) > 0) $data = $data[0];
+        else throw new Exception('Le véhicule n\'existe pas.');
+
+
+        $vehicule = new Vehicule(
+            $data['marque'],
+            $data['modele'],
+            $data['couleur'],
+            $data['immatriculation'],
+            intval($data['id_vehicule'])
+        );
+
+        return $vehicule;
+    }
+
+    public function save() {
+        $data = [
+            'marque' => $this->marque(),
+            'modele' => $this->modele(),
+            'couleur' => $this->couleur(),
+            'immatricultion' => $this->immatricultion(),
+        ];
+
+        if($this->idVehicule() > 0) return $this->update($data);
+
+        $this->setIdVehicule()( Db::dbCreate(self::TABLE_NAME, $data) );
+
+        return $this;
+    }
+
+    protected function update(array $data) {
+
+        $data['id_vehicule'] = $this->idVehicule();
+
+        Db::dbUpdate(self::TABLE_NAME, $data, 'id_vehicule');
+        return $this;
+    }
+
+    protected function delete() {
+        
+        Db::dbDelete(self::TABLE_NAME, [
+            ['id_vehicule', '=', $this->idVehicule()]
+        ]);
+
+        Db::dbDelete(Association::TABLE_NAME, [
+            ['id_vehicule', '=', $this->idVehicule()]
+        ]);
+
+        return;
     }
 
 }
