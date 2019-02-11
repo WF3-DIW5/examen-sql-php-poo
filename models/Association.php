@@ -110,4 +110,11 @@ class Association extends Db {
         return;
     }
 
+    public function conducteur() {
+        return Conducteur::findOne($this->idConducteur());
+    }
+
+    public function vehicule() {
+        return Vehicule::findOne($this->idVehicule());
+    }
 }

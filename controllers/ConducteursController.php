@@ -4,7 +4,7 @@ class ConducteursController {
     public function index() {
 
         $conducteurs = Conducteur::findAll();
-        var_dump($conducteurs);
+        view('conducteurs.index', compact('conducteurs'));
     }
 
     public function add() {
@@ -13,11 +13,9 @@ class ConducteursController {
     public function show($id) {
 
         $conducteur = Conducteur::findOne($id);
-        var_dump($conducteur);
+        view('conducteurs.index', compact('conducteur'));
     }
 
-    public function edit($id) {
-    }
 
     public function delete($id) {
     }

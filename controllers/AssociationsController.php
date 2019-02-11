@@ -4,7 +4,10 @@ class AssociationsController {
     public function index() {
 
         $associations = Association::findAll();
-        var_dump($associations);
+        $conducteurs = Conducteur::findAll();
+        $vehicules = Vehicule::findAll();
+
+        view('associations.index', compact('associations', 'conducteurs', 'vehicules'));
     }
 
     public function add() {
@@ -13,10 +16,8 @@ class AssociationsController {
     public function show($id) {
 
         $association = Association::findOne($id);
-        var_dump($association);
-    }
+        view('associations.show', compact('association'));
 
-    public function edit($id) {
     }
 
     public function delete($id) {

@@ -4,7 +4,8 @@ class VehiculesController {
     public function index() {
 
         $vehicules = Vehicule::findAll();
-        var_dump($vehicules);
+        view('vehicules.index', compact('vehicules'));
+
 
     }
 
@@ -14,7 +15,8 @@ class VehiculesController {
     public function show($id) {
 
         $vehicule = Vehicule::findOne($id);
-        var_dump($vehicule);
+        view('vehicules.index', compact('vehicule'));
+
 
     }
 
