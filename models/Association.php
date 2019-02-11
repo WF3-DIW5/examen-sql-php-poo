@@ -21,17 +21,17 @@ class Association extends Db {
     public function idConducteur() { return $this->id_conducteur; }
 
     public function setIdAssociation($id_association) {
-        $this->id_association;
+        $this->id_association = $id_association;
         return $this;
     }
 
     public function setIdVehicule($id_vehicule) {
-        $this->id_vehicule;
+        $this->id_vehicule = $id_vehicule;
         return $this;
     }
 
     public function setIdConducteur($id_conducteur) {
-        $this->id_conducteur;
+        $this->id_conducteur = $id_conducteur;
         return $this;
     }
 
@@ -45,7 +45,9 @@ class Association extends Db {
 
         $associations = [];
 
+
         foreach($datas as $data) {
+
             $associations[] = new Association(
                 intval($data['id_vehicule']),
                 intval($data['id_conducteur']),
