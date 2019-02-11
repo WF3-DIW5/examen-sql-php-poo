@@ -1,6 +1,6 @@
 <?php
 
-class ConducteursController extends Db {
+class ConducteursController {
     public function index() {
     }
 

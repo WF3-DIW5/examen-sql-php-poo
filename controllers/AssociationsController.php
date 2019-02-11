@@ -1,6 +1,6 @@
 <?php
 
-class AssociationsController extends Db {
+class AssociationsController {
     public function index() {
     }
 

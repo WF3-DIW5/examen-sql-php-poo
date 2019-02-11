@@ -1,7 +1,6 @@
 <?php
 
-class VehiculesController extends Db
-{
+class VehiculesController {
     public function index() {
     }
 
