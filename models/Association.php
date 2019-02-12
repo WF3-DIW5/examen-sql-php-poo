@@ -103,10 +103,6 @@ class Association extends Db {
             'id_association' => $this->idAssociation()
         ]);
 
-        Db::dbDelete(Association::TABLE_NAME, [
-            'id_association' => $this->idAssociation()
-        ]);
-
         return;
     }
 
