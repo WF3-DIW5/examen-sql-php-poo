@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
     <table class="table table-striped text-center">
         <tr>
             <th>id_conducteur</th>
@@ -10,7 +9,6 @@
         </tr>
 
         <?php foreach ($conducteurs as $conducteur) : ?>
-
             <tr>
                 <td><?= $conducteur->idConducteur() ?></td>
                 <td><?= $conducteur->prenom() ?></td>
@@ -31,23 +29,23 @@
     </table>
 
 
-<form action="<?= url('conducteurs/save') ?>" method="post">
+    <form action="<?= url('conducteurs/save') ?>" method="post">
 
-    <input id="conducteurId" type="hidden" name="id_conducteur">
+        <input id="conducteurId" type="hidden" name="id_conducteur">
 
-    <label for="conducteurPrenom">Prénom</label>
-    <input type="text" id="conducteurPrenom" class="form-control" name="prenom" required>
+        <label for="conducteurPrenom">Prénom</label>
+        <input type="text" id="conducteurPrenom" class="form-control" name="prenom" required>
 
-    <label for="conducteurNom">Nom</label>
-    <input type="text" id="conducteurNom" class="form-control" name="nom" required>
+        <label for="conducteurNom">Nom</label>
+        <input type="text" id="conducteurNom" class="form-control" name="nom" required>
 
 
-    <hr>
+        <hr>
 
-    <button id="conducteurSubmit" type="submit" class="btn btn-primary">Ajouter ce conducteur</button>
-</form>
-
+        <button id="conducteurSubmit" type="submit" class="btn btn-primary">Ajouter ce conducteur</button>
+        <a id="conducteurCancelEdit" class="btn btn-danger text-light" style="display:none">Annuler la modification</a>
+    </form>
 
 <?php $content = ob_get_clean(); ?>
 
-<?php view('template', compact('content')); ?>
+<?php view('template', compact('content', 'javascript')); ?>

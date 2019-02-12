@@ -25,7 +25,11 @@
                             <i class="fas fa-pen"></i>
                     </a>
                 </td>
-                <td><a class="delete" href="<?= url('associations/' . $association->idAssociation() . '/delete') ?>"><i class="fas fa-trash"></i></a></td>
+                <td>
+                    <a class="delete" href="<?= url('associations/' . $association->idAssociation() . '/delete') ?>">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
