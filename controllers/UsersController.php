@@ -73,7 +73,7 @@ class UsersController extends Db {
             // Si l'user existe
             else {
                 
-                if (!password_verify($_POST['password'], substr($userDb->password(), 0, 60))) {
+                if (!password_verify($_POST['password'], $userDb->password())) {
                     throw new Exception('Le mot de passe est incorrect.');
                 }
                 
