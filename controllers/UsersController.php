@@ -1,6 +1,6 @@
 <?php
 
-class UsersController {
+class UsersController extends Db {
 
     /**
      * Signup page
@@ -11,44 +11,39 @@ class UsersController {
          * Traitements pour le cas de la route POST
          */
         if (!empty($_POST)) {
-            var_dump($_POST);
+            
 
-            // TODO: Validation e-mail: vérification de l'unicité
+            $userDb = User::findByEmail($_POST['email']);
 
-            $userDb = User::findBy(['' => '']); // A remplir !
-
-            // TODO: SI $userDb existe, alors l'e-mail n'est pas unique,
+            // SI $userDb existe, alors l'e-mail n'est pas unique,
             // donc l'utilisateur existe, donc on redirige vers la page Login.
-            if ($userDb) {
-                // ...
+            if (!empty($userDb)) {
+                Header('Location: ' . url('login'));
             }
-            // TODO: SINON : l'user n'existe pas, on peut créér l'utilisateur.
+            // SINON : l'user n'existe pas, on peut créér l'utilisateur.
             else {
-                // ...
 
-                // TODO: Comparaison de password et password_confirm
-                // if ( password == password_confirm) { 
+                // Comparaison de password et password_confirm
+                if ( $_POST['password'] == $_POST['password_confirm']) { 
 
-                    // TODO: Créer l'utilisateur :
-                    // $user = new User('a', 'b', 'c');
-                    // $user->save();
+                    // Créer l'utilisateur :
+                    $user = new User($_POST['pseudo'], $_POST['email'], $_POST['password']);
+                    $user->save();
 
 
-                    // TODO: Session :
-
+                    // Session :
                     // On passe notre objet User en session afin d'y accéder de partout dans le code
-                    // $_SESSION['user'] = $user;
 
-                    // TODO: redirection
+                    $_SESSION['user'] = $user;
 
-                    // Maintenant que l'utilisateur est créé et la session créée, on 
-                    // redirige vers la page d'accueil
+                    // Redirection
+                    // Maintenant que l'utilisateur est créé et la session créée, on  redirige vers la page d'accueil
 
-                    // -redirection à faire-
-
-
-                // }
-                // else { throw new Exception('...'); }
+                    Header('Location: ' . url('/'));
+                }
+                else {
+                    throw new Exception('Les mots de passe ne correspondent pas.');
+                }
 
 
             }
@@ -66,34 +61,37 @@ class UsersController {
 
         if (!empty($_POST)) {
             
-            // TODO: vérifier que le User existe en BDD avec par exemple :
+            // vérifier que le User existe en BDD avec par exemple :
 
-            /* Db::find('User', [
-                [
-                    'email' => $_POST['email'],
-                    'password_hash' => $_POST['password']
-                ]
-            ]); */
+            $userDb = User::findByEmail($_POST['email']);
 
-            // TODO: déporter cette requête dans le Model (qui est plus adapté car c'est le Model qui s'occupe des données)
 
-            // SI l'utilisateur existe, alors il est logué :
-
-            if ($userDb) {
-
-                // TODO: passer en session l'User trouvé en DB
-                // $_SESSION['user'] = $userDb;
+            if (empty($userDb)) {
+                throw new Exception('L\'utilisateur n\'existe pas');
             }
 
+            // Si l'user existe
             else {
-                // TODO: 
-                    // soit : afficher des erreurs avec throw new Exception
-                    // soit : rediriger vers la page d'inscription
+                
+                if (!password_verify($_POST['password'], substr($userDb->password(), 0, 60))) {
+                    throw new Exception('Le mot de passe est incorrect.');
+                }
+                
+                // Si son mot de passe est valide
+                else {
+
+
+                    // passer en session l'User trouvé en DB
+                    $_SESSION['user'] = $userDb;
+
+                    Header('Location: ' . url('/'));
+
+                }
             }
 
-            // TODO: FACULTATIF
-            // Si l'e-mail existe mais ne mot de passe n'est pas bon: afficher une erreur
-            // Si l'e-mail n'existe pas, rediriger vers la page d'inscription
+            
+
+            
 
         }
         view('users.login');
@@ -105,10 +103,8 @@ class UsersController {
      */
     public function logout() {
 
-        // TODO: On detruit la session de l'user avec session_destroy
-
-        // TODO: Redirection vers la page d'accueil
-
+        session_destroy();
+        Header('Location: ' . url('/'));
     }
 
 }
