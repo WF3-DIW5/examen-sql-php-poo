@@ -17,9 +17,21 @@ class Conducteur extends Db {
 
     }
 
-    public function idConducteur() { return $this->id_conducteur; }
-    public function prenom() { return $this->prenom; }
-    public function nom() { return $this->nom; }
+    public function idConducteur() : int
+    {
+        return $this->id_conducteur;
+    }
+
+    public function prenom() : string
+    {
+        return $this->prenom;
+    }
+
+    public function nom() : string
+    {
+        return $this->nom;
+    }
+
 
     public function setIdConducteur($id_conducteur) { 
         $this->id_conducteur = $id_conducteur;
