@@ -200,4 +200,45 @@ class User extends Db {
 
         return $this;
     }
+
+    public static function findByEmail(string $email)
+    {
+        $data = Db::dbFind(self::TABLE_NAME, [
+            ['email', '=', $email]
+        ]);
+
+        if (count($data) > 0) $data = $data[0];
+        else return; // throw new Exception('Le user n\'existe pas.');
+
+
+        $user = new User(
+            $data['pseudo'],
+            $data['email'],
+            $data['password_hash'],
+            intval($data['id'])
+        );
+
+        return $user;
+    }
+
+    public static function findByCredentials(string $email, string $password)
+    {
+        $data = Db::dbFind(self::TABLE_NAME, [
+            ['email', '=', $email],
+            ['email', '=', password_verify($password, PASSWORD_DEFAULT)]
+        ]);
+
+        if (count($data) > 0) $data = $data[0];
+        else return; // throw new Exception('Le user n\'existe pas.');
+
+
+        $user = new User(
+            $data['pseudo'],
+            $data['email'],
+            $data['password_hash'],
+            intval($data['id'])
+        );
+
+        return $user;
+    }
 }

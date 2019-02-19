@@ -48,4 +48,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php view('template', compact('content', 'javascript')); ?>
+<?php view('template', compact('content')); ?>

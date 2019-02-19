@@ -1,6 +1,6 @@
 <?php
 
-class UsersController {
+class UsersController extends Db {
 
     /**
      * Signup page
@@ -103,6 +103,7 @@ class UsersController {
                 }
             }
 
+            // Si l'user existe
             else {
                 throw new Exception('Les identifiants sont invalides.');
                 //Header('Location: ' . url('signup'));
