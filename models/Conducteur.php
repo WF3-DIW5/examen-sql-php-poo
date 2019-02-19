@@ -78,6 +78,7 @@ class Conducteur extends Db {
             ['id_conducteur', '=', $id]
         ]);
 
+
         if (count($data) > 0) $data = $data[0];
         else throw new Exception('Le conducteur n\'existe pas.');
 

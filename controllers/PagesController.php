@@ -4,7 +4,14 @@ class PagesController extends Db {
 
     public function home() {
 
-        view('pages.home');
+        // On traite les exceptions
+        $exceptions = $_SESSION['exceptions'] ? $_SESSION['exceptions'] : [];
+
+        // On supprime le tableau d'exceptions une fois traitées
+        $_SESSION['exceptions'] = [];
+
+
+        view('pages.home', compact('exceptions'));
 
     }
 
@@ -226,5 +233,13 @@ class PagesController extends Db {
 
         $content = ob_get_clean();
         view('template', compact('content'));
+    }
+
+    public function http404() {
+
+        Header('HTTP/1.1 404 Not Found');
+
+        view('pages.404');
+
     }
 }

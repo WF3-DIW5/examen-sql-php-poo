@@ -1,5 +1,14 @@
 <?php ob_start(); ?>
 
+<?php if (count($exceptions) > 0) : ?>
+
+    <?php foreach($exceptions as $e) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= $e; ?>
+        </div>
+    <?php endforeach; ?>
+    
+<?php endif; ?>
 <h1>Template de base de MVC !</h1>
 
 <h2>Comment commencer ?</h2>

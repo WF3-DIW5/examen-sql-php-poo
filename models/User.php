@@ -8,11 +8,25 @@ class User extends Db {
     protected $password;
     protected $created_at;
 
-    public function __construct(string $pseudo, string $email, string $password, $id = null) {
+    const TABLE_NAME = 'user';
+
+    public function __construct(string $pseudo, string $email, string $password, int $id = null, string $created_at = null) {
         $this->setPseudo($pseudo);
         $this->setEmail($email);
-        $this->setPassword($password);
+
+        // Si j'ai un Id, c'est que je créée un objet User depuis la BDD
+        // Donc j'ai besoin du MDP brut qui est en BDD (il est déjà hashé)
+        if ($id !== null) {
+            $this->password = $password;
+        }
+        // Sinon, c'est que je suis en train de créer un nouvel utilisateur
+        // je ne passe donc dans le setter pour hasher le MDP
+        else {
+            $this->setPassword($password);
+        }
+
         $this->setId($id);
+        $this->setCreatedAt($created_at);
     }
 
     /**
@@ -50,6 +64,14 @@ class User extends Db {
      */ 
     public function setPseudo($pseudo)
     {
+        if (strlen($pseudo) <= 3 ) {
+            throw new Exception('pseudo trop court');
+        }
+
+        if (strlen($pseudo) >= 150) {
+            throw new Exception('pseudo trop long');
+        }
+
         $this->pseudo = $pseudo;
 
         return $this;
@@ -71,7 +93,10 @@ class User extends Db {
     public function setEmail($email)
     {
 
-        /** TODO: validation de l'e-mail */
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception('email non valide');
+        }
+
         $this->email = $email;
 
         return $this;
@@ -115,9 +140,63 @@ class User extends Db {
         // TODO: FACULTATIF : valider le mot de passe
         // (pas trop court, avec des chars speciaux, maj + min ...)
 
-        // TODO: on n'enregistre pas $password dans $this->password directement !
-        // Il faut hasher le mot de passe en utilisant la fonction password_hash()
-        $this->password = $password;
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $this->password = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Méthodes CRUD
+     */
+
+    
+    /**
+     * Recherche (SELECT) dans la table 'user'
+     *
+     * @param   array $request Array contenant 1+ arrays de type ['champ', 'operateur', 'valeur']
+     *
+     * @return User[]|false
+     */
+    public static function find(array $request) {
+
+        $datas = Db::dbFind( self::TABLE_NAME, $request);
+
+
+        if ( count($datas) > 0 ) {
+
+            $users = [] ;
+
+            foreach ($datas as $data) {
+
+                $user = new User(
+                    $data['pseudo'],
+                    $data['email'],
+                    $data['password_hash'],
+                    intval($data['id'])
+                );
+
+                $users[] = $user;
+            }
+
+            return $users;
+
+        }
+
+        return false;
+
+    }
+
+    public function save() {
+
+        $id = Db::dbCreate(self::TABLE_NAME, [
+            'email' => $this->email(),
+            'password_hash' => $this->password(),
+            'pseudo' => $this->pseudo(),
+        ]);
+
+        $this->setId($id);
 
         return $this;
     }

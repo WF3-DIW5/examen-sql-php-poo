@@ -21,3 +21,17 @@ const CLASSES_SOURCES = [
 ];
 
 const ENV = 'dev';
+
+
+function errorHandler(Exception $e) {
+
+    $_SESSION['exceptions'][] = $e->getMessage();
+
+    //FIXME: redirection 302 au lieu de 500 (à ccause du location ?)
+    // Header('HTTP/1.1 500 Internal Server Error');
+    Header('Location: ' . url('/'));
+
+    return;
+}
+
+set_exception_handler('errorHandler');

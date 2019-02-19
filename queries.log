@@ -1,3 +1,348 @@
+[2019-02-19 11:28:48] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:22:18] SELECT * FROM user WHERE `email` = 'sdfsdfsdf@sdfsdfsdfsdffds.co'
+[2019-02-19 11:21:30] SELECT * FROM user WHERE `email` = 'fdgfdgdg@dfgfdg.co'
+[2019-02-19 11:20:45] SELECT * FROM user WHERE `email` = 'bfsdfsdfds@sdfsdf.co'
+[2019-02-19 11:19:57] SELECT * FROM user WHERE `email` = 'sdsdfsdf@sdfdsf.co'
+[2019-02-19 11:15:22] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:15:15] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 11:14:09] SELECT * FROM user WHERE `email` = 'sdfsdfsdf@sdfsdfsdf.co'
+[2019-02-19 11:13:32] SELECT * FROM user WHERE `email` = 'sdfsdf@dfdsdfsdf.co'
+[2019-02-19 11:11:55] SELECT * FROM user WHERE `email` = 'sdfsdf@dfdsdfsdf.co'
+[2019-02-19 11:11:38] SELECT * FROM user WHERE `email` = 'sdfsdf@dfdsdfsdf.co'
+[2019-02-19 11:11:07] SELECT * FROM user WHERE `email` = 'sdfsdf@dfdsdfsdf.co'
+[2019-02-19 11:06:13] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:05:22] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:04:35] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:04:24] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:03:18] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 11:00:43] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 11:00:22] SELECT * FROM user WHERE `email` like '%david@example.co%'
+[2019-02-19 10:59:50] SELECT * FROM user WHERE `email` like '%david@example.comtesttest%'
+[2019-02-19 10:59:43] SELECT * FROM user WHERE `email` like '%david@example.comtesttest%'
+[2019-02-19 10:58:48] SELECT * FROM user WHERE `email` = 'david@example.comtesttest'
+[2019-02-19 10:58:36] SELECT * FROM user WHERE `email` = 'david@example.comtesttest'
+[2019-02-19 10:57:45] SELECT * FROM user WHERE `email` = 'david@example.comtesttest'
+[2019-02-19 10:57:28] SELECT * FROM user WHERE `email` = 'david@examplesdfsdfsdfs.com'
+[2019-02-19 10:57:20] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:57:08]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-19 10:57:08]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-19 10:57:08]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-19 10:57:08]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-19 10:57:08]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS NULL
+[2019-02-19 10:57:08]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-19 10:57:08] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-19 10:57:08] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-19 10:57:08] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-19 10:57:04]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+                        
+                    UNION
+
+                    SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-19 10:57:04]     SELECT modele, prenom
+                    FROM vehicule
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    LEFT JOIN conducteur
+                        ON	conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+[2019-02-19 10:57:04]     SELECT modele, prenom
+                    FROM conducteur
+
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+
+                    LEFT JOIN vehicule
+                        ON	vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+[2019-02-19 10:57:04]     SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                    FROM vehicule
+                    INNER JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+
+                    INNER JOIN conducteur
+                        ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+                        
+                    WHERE prenom = 'Philippe'
+                    AND nom = 'Pandre'
+[2019-02-19 10:57:04]     SELECT conducteur.id_conducteur, prenom, nom
+                    FROM conducteur
+                    LEFT JOIN association_vehicule_conducteur
+                        ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+                    WHERE id_vehicule IS NULL
+[2019-02-19 10:57:04]  SELECT vehicule.id_vehicule, marque, modele, couleur, immatriculation
+                FROM vehicule
+                LEFT JOIN association_vehicule_conducteur
+                    ON association_vehicule_conducteur.id_vehicule = vehicule.id_vehicule
+                WHERE id_conducteur IS NULL
+[2019-02-19 10:57:04] SELECT COUNT(*) as nb FROM association_vehicule_conducteur
+[2019-02-19 10:57:04] SELECT COUNT(*) as nb FROM vehicule
+[2019-02-19 10:57:04] SELECT COUNT(*) as nb FROM conducteur
+[2019-02-19 10:54:48] SELECT * FROM conducteur
+[2019-02-19 10:54:40] SELECT * FROM conducteur
+[2019-02-19 10:54:37] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:43:52] SELECT * FROM conducteur
+[2019-02-19 10:19:42] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:18:59] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:17:29] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:11:48] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:11:40] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:11:36] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:11:28] SELECT * FROM user WHERE `email` = 'sdfsdfdsfds@sdfdsf.com'
+[2019-02-19 10:06:43] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:06:42] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:06:41] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:06:15] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:06:11] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:05:41] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:05:35] INSERT INTO user (`email`, `password_hash`, `pseudo`) VALUES ('david@example.com', 'y$rp39Mz7sBfBkElsh495rI.KhZxGoQTlsewpo47XHniXtpBN8IUl9S', 'David') 
+[2019-02-19 10:05:35] SELECT * FROM user WHERE `email` = 'david@example.com'
+[2019-02-19 10:05:03] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:05:00] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:04:01] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:04:00] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:03:57] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:03:49] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:03:12] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:01:58] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:01:57] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:01:56] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:01:56] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 10:01:55] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:38] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:37] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:33] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:31] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:28] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:26] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:24] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:23] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:21] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:20] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:18] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:15] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:58:08] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:57:20] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:52:13] INSERT INTO user (`email`, `password_hash`, `pseudo`) VALUES ('eric@example.com', 'y$zSNNlnbnnRzXK21S43rNOeDqaFusP6NlijerGNGUFSbnVQW.Gh4wO', 'Eric') 
+[2019-02-19 09:52:13] SELECT * FROM user WHERE `email` = 'eric@example.com'
+[2019-02-19 09:48:13] INSERT INTO user (`email`, `password_hash`, `pseudo`) VALUES ('jeanluc@example.com', 'ysqgAmwAuLtMvvDwGsoDkuOKwCiL.P89fILOMU4/Yg/lD8cEtA7Be', 'test') 
+[2019-02-19 09:48:13] SELECT * FROM user WHERE `email` = 'jeanluc@example.com'
+[2019-02-19 09:47:27] SELECT * FROM user WHERE `email` = 'caroline@example.com'
+[2019-02-19 09:41:56] INSERT INTO user (`email`, `password_hash`, `pseudo`) VALUES ('caroline@example.com', 'y$kWwUBYYonP/zDxIoa/OJu.8VUps3Opl5mMgT.1ykc/xOllYgbSv6K', 'test') 
+[2019-02-19 09:41:56] SELECT * FROM user WHERE `email` = 'caroline@example.com'
+[2019-02-19 09:41:21] SELECT * FROM vehicule
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 09:41:21] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 09:41:21] SELECT * FROM vehicule
+[2019-02-19 09:41:21] SELECT * FROM conducteur
+[2019-02-19 09:41:21] SELECT * FROM association_vehicule_conducteur
+[2019-02-19 09:41:20] SELECT * FROM conducteur
+[2019-02-19 09:40:19] SELECT * FROM user WHERE `email` = 'caroline@example.com'
+[2019-02-19 09:39:18] SELECT * FROM user WHERE `email` = 'caroline@example.com'
+[2019-02-19 09:38:32] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:36:20] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:35:37] INSERT INTO user (`email`, `password_hash`, `pseudo`) VALUES ('thomas@example.com', 'y$vhymRDboOZY7H8MnuWl53O7eisrVb1EUtJ56LURINq12a0fqWjDcy', 'thomas') 
+[2019-02-19 09:35:37] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:32:46] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:32:28] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:32:20] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:32:03] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:32:01] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:55] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:54] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:53] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:51] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:50] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:49] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:41] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:40] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:32] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:30] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:28] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:27] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:26] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:24] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:31:13] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:30:28] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:30:11] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:29:01] SELECT * FROM user WHERE `email` = 'thomas@example.com'
+[2019-02-19 09:28:49] SELECT * FROM conducteur
+[2019-02-19 09:05:06] SELECT * FROM conducteur
+[2019-02-19 09:04:52] SELECT * FROM conducteur
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:38] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:38] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:38] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:38] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:38] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:37] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:37] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:37] SELECT * FROM vehicule
+[2019-02-19 08:51:37] SELECT * FROM conducteur
+[2019-02-19 08:51:37] SELECT * FROM association_vehicule_conducteur
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '509'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '8'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '504'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '4'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:28] SELECT * FROM vehicule WHERE `id_vehicule` = '503'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:28] SELECT * FROM conducteur WHERE `id_conducteur` = '3'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '502'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '2'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:27] SELECT * FROM vehicule WHERE `id_vehicule` = '501'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:27] SELECT * FROM conducteur WHERE `id_conducteur` = '1'
+[2019-02-19 08:51:27] SELECT * FROM vehicule
+[2019-02-19 08:51:27] SELECT * FROM conducteur
+[2019-02-19 08:51:27] SELECT * FROM association_vehicule_conducteur
 [2019-02-12 09:46:12]     SELECT modele, prenom
                     FROM conducteur
 
